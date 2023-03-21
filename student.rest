@@ -1,0 +1,67 @@
+### Fetch Student with ID 
+GET http://localhost:3001/api/students/
+
+### All Students
+GET http://localhost:3001/api/students/
+
+### Post Requests
+
+POST http://localhost:3001/api/students/
+content-type: application/json
+
+{
+    "name": "Rijajaf",
+    "roll": 614523,
+    "email": "thefarerevenant@gmail.com",
+    "phone": "3431",
+    "gender": "M",
+    "branch": "cse",
+    "cgpa": 9,
+    "address":{
+        "city": "jsr",
+        "state": "FLorida"
+    }
+}
+
+###delete with id
+DELETE http://localhost:3001/api/students/:id
+
+
+### update with id (more to be done in routes)
+PUT http://localhost:3001/api/students/:id
+content-type: application/json 
+
+{
+    "name": "samplrefefrefrgegegvgnadsczcdcmee",
+    "number": "4379r793fvvcdsgg79"
+}
+
+
+### Deployed post request
+POST http://localhost:3002/api/students/
+content-type: application/json
+
+{
+    "name": "rdsa",
+    "website": "www.redocdsea.com",
+    "location": "Dante Kan",
+    "poc": {
+        "name" : "Revens",
+        "phone": "3213213",
+        "email": "2147009@kic.in"
+    },
+    "internshipDetails":{
+        "duration": {
+            "min" : 2,
+            "max" : 4
+        },
+        "stipend": {
+            "min" : 1000,
+            "max" : 8000
+        },
+        "domains":["tech","design"],
+        "skills":["javascript","react","figma","canva"]
+    },
+    "additionalPerks":["accomodation"],
+    "mode":"online"
+}
