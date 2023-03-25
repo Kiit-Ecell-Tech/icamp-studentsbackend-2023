@@ -43,13 +43,14 @@ studentRouter.post('/', middleware.validMailConfig, async (request, response) =>
       student: body.name,
     },
   })
+  console.log(process.env.EMAIL_USER)
 
   let mail = MailGenerator.generate({ body: {} })
 
   let message = {
     from: process.env.EMAIL_USER,
     to: body.email,
-    subject: 'Thank You for Registering for the Internship Camp’23',
+    subject: 'You’re in | I Camp’23 | KIIT Entrepreneurship Cell',
     html: mail,
   }
 
