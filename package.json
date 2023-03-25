@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-	  "dev": "nodemon index.js",
-	  "lint": "eslint .",
-	  "test": "jest --verbose --runInBand"
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "test": "jest --verbose --runInBand"
   },
   "author": "Pratik Dev Das",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "express-async-errors": "^3.1.1",
     "mailgen": "^2.0.27",
     "mongoose": "^7.0.2",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.9.1"
   },
   "devDependencies": {

@@ -1,17 +1,16 @@
 ### Fetch Student with ID 
-GET http://localhost:3001/api/students/
+GET http://localhost:3001/
 
-### All Students
-GET http://localhost:3001/api/students/
+###
+GET http://localhost:3001/api/students/6sdd41d6a01957664631d6cfafsds5
 
 ### Post Requests
-
 POST http://localhost:3001/api/students/
 content-type: application/json
 
 {
-    "name": "Rijajaf",
-    "roll": 614523,
+    "name": "Rijfajkl5",
+    "roll": 6146565435,
     "email": "thefarerevenant@gmail.com",
     "phone": "3431",
     "gender": "M",
