@@ -34,7 +34,6 @@ studentRouter.post('/', async(request, response) => {
   })
 
   let mail = MailGenerator.generate({ body: {} })
-  console.log(body.email, process.env.EMAIL_PASSWORD, process.env.EMAIL_USER)
 
   let message = {
     from: process.env.EMAIL_USER,
