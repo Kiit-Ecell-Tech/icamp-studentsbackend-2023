@@ -1,18 +1,29 @@
 const studentRouter = require('express').Router()
 const Student = require('../models/student')
+const middleware = require('../utils/middleware')
 const nodemailer = require('nodemailer')
 const Mailgen = require('mailgen')
 const path = require('path')
-const validator = require('email-validator')
 
 studentRouter.get('/', async (request, response) => {
   const students = await Student.find({})
   response.json(students)
 })
 
-studentRouter.post('/', async(request, response) => {
+studentRouter.get('/:id', async (request, response) => {
+  const student = await Student.findById(request.params.id)
+  return response.json(student)
+})
+
+studentRouter.post('/', middleware.validMailConfig, async (request, response) => {
   const body = request.body
   const student = new Student({ ...body })
+
+  if (!body.name || !body.email) {
+    return response.status(400).json({
+      error: 'name or email missing',
+    })
+  }
 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -42,27 +53,11 @@ studentRouter.post('/', async(request, response) => {
     html: mail,
   }
 
-  if (!body.name || !body.email) {
-    return response.status(400).json({
-      error: 'name or email missing',
-    })
-  }
-  // email validator
-  if (!validator.validate(body.email)) {
-    return response.status(400).json({
-      error: 'Wrong student email',
-    })
-  }
-
   await student.save()
   await transporter.sendMail(message)
   return response.status(201).json(student)
-})
-
-studentRouter.get('/:id', async (request, response) => {
-  const student = await Student.findById(request.params.id)
-  return response.json(student)
-})
+}
+)
 
 studentRouter.delete('/:id', async (request, response) => {
   await Student.findByIdAndRemove(request.params.id)
