@@ -9,9 +9,9 @@ POST http://localhost:3001/api/students/
 content-type: application/json
 
 {
-    "name": "ASFGHJ",
-    "roll": 123456,
-    "email": "abcd@kiit.ac.in",
+    "name": "Pratik",
+    "roll": 1234567856,
+    "email": "2147009@kiit.ac.in",
     "phone": "3431",
     "gender": "M",
     "branch": "cse",
