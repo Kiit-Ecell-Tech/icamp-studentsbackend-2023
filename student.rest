@@ -1,17 +1,17 @@
-### Fetch Student with ID 
-GET http://localhost:3001/
+### Fetch Students
+GET http://localhost:3001/api/students/
 
 ###
-GET http://localhost:3001/api/students/6sdd41d6a01957664631d6cfafsds5
+GET http://localhost:3001/api/students/641d6a01957664631d6cfaf5
 
 ### Post Requests
 POST http://localhost:3001/api/students/
 content-type: application/json
 
 {
-    "name": "Rijfajkl5",
-    "roll": 6146565435,
-    "email": "thefarerevenant@gmail.com",
+    "name": "ASFGHJ",
+    "roll": 123456,
+    "email": "abcd@kiit.ac.in",
     "phone": "3431",
     "gender": "M",
     "branch": "cse",
@@ -33,34 +33,4 @@ content-type: application/json
 {
     "name": "samplrefefrefrgegegvgnadsczcdcmee",
     "number": "4379r793fvvcdsgg79"
-}
-
-
-### Deployed post request
-POST http://localhost:3002/api/students/
-content-type: application/json
-
-{
-    "name": "rdsa",
-    "website": "www.redocdsea.com",
-    "location": "Dante Kan",
-    "poc": {
-        "name" : "Revens",
-        "phone": "3213213",
-        "email": "2147009@kic.in"
-    },
-    "internshipDetails":{
-        "duration": {
-            "min" : 2,
-            "max" : 4
-        },
-        "stipend": {
-            "min" : 1000,
-            "max" : 8000
-        },
-        "domains":["tech","design"],
-        "skills":["javascript","react","figma","canva"]
-    },
-    "additionalPerks":["accomodation"],
-    "mode":"online"
 }

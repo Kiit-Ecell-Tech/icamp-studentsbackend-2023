@@ -1,3 +1,5 @@
+const validator = require('email-validator')
+
 const unknownEndpoint = (request, response) => {
   response.status(404).send({ error: 'unknown endpoint' })
 }
@@ -13,7 +15,27 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
+
+const validMailConfig = (request, response, next) => {
+  const email = request.body.email
+  if (!validator.validate(email)) {
+    return response.status(400).json({
+      error: 'Invalid Email',
+    })
+  }
+
+  if(email.split('@')[1] !== 'kiit.ac.in') {
+    {
+      return response.status(400).json({
+        error: 'Invalid KIIT-Email',
+      })
+    }
+  }
+  next()
+}
+
 module.exports = {
   unknownEndpoint,
   errorHandler,
+  validMailConfig
 }
