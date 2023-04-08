@@ -10,7 +10,7 @@ const errorHandler = (error, request, response, next) => {
   } else if (error.code === 11000) {
     return response
       .status(400)
-      .json({ error: 'Student or roll already exists' })
+      .json({ error: 'Email or roll already exists' })
   } else if (error.name === 'ValidationError') {
     return response.status(400).json({ error: error.message })
   }
